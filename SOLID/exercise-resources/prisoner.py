@@ -8,6 +8,7 @@ class Person:
     def __init__(self, position):
         self.position = position
 
+
 class FreePerson(Person):  # Person:
 
     def walk_north(self, dist):
@@ -25,7 +26,6 @@ class Prisoner(Person):
         self.is_free = False
 
 
-
 prisoner = Prisoner()
 print("The prisoner trying to walk to north by 10 and east by -3.")
 
@@ -37,3 +37,13 @@ except:
 
 print(f"The location of the prison: {prisoner.PRISON_LOCATION}")
 print(f"The current position of the prisoner: {prisoner.position}")
+
+fp = FreePerson([3, 3])
+
+try:
+    fp.walk_north(10)
+    fp.walk_east(-3)
+except:
+    pass
+
+print(f"The current position of the FreePerson: {fp.position}")

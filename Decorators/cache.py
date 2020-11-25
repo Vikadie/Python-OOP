@@ -1,11 +1,14 @@
 def cache(func):
     d = dict()
 
-    def wrapper(*args, **kwargs):
-        res = func(*args, **kwargs)
-        d[args[0]] = res
-        setattr(wrapper, 'log', d)
-        return res
+    def wrapper(arg):
+        if arg not in d:
+            res = func(arg)
+            d[arg] = res
+            return res
+        return d[arg]
+
+    setattr(wrapper, 'log', d)
     return wrapper
 
 

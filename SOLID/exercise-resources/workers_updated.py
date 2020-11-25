@@ -4,6 +4,7 @@
 from abc import ABCMeta, abstractmethod
 import time
 
+
 class Workable:
     __metaclass__ = ABCMeta
 
@@ -11,11 +12,14 @@ class Workable:
     def work(self):
         pass
 
+
 class Eatable:
     __metaclass__ = ABCMeta
+
     @abstractmethod
     def eat(self):
         pass
+
 
 class Worker(Workable, Eatable):
 
@@ -25,6 +29,7 @@ class Worker(Workable, Eatable):
     def eat(self):
         print("Lunch break....(5 secs)")
         time.sleep(5)
+
 
 class SuperWorker(Workable, Eatable):
 
@@ -46,13 +51,16 @@ class Manager:
 
         self.worker = worker
 
+
 class WorkManager(Manager):
     def manage(self):
         self.worker.work()
 
+
 class BreakManager(Manager):
     def lunch_break(self):
         self.worker.eat()
+
 
 class Robot(Workable):
 
