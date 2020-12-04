@@ -1,0 +1,1 @@
+AUTOCOMPLETE_URL = 'http://suggestqueries.google.com/complete/search?&output=toolbar&gl=us&hl=en&q='
